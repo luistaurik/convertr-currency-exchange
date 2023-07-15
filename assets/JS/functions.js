@@ -21,19 +21,28 @@ async function getCurrencyApi() {
     let exchangeOutput = document.querySelector("#result");
     let euroValue = await currency.euro.valor;
     let dollarValue = await currency.dolar.valor;
-    console.log("dolar is ",dollarValue)
-    if (isNaN(clpInput) || exchangeCurrency === "SELECT") {
-        Swal.fire({
-            icon: "info",
-            title: "Ooops",
-            text: "Check the amount or the currency",
-          })
-    } else if (exchangeCurrency === "EURO") {
-        return exchangeOutput.innerHTML = `€ ${(clpInput / euroValue).toFixed(2)}`;
-    } else if (exchangeCurrency === "DOLLAR") {
-        return exchangeOutput.innerHTML = `$ ${(clpInput / dollarValue).toFixed(2)}`;
-    } else {}
-  }
+    if (clpInput <= parseFloat(0)) {
+      Swal.fire({
+        icon: "info",
+        title: "Ooops",
+        text: "You cannot convert negative money",
+      }) 
+      return;
+    }
+      else {
+        if (isNaN(clpInput) || clpInput === 0 || exchangeCurrency === "SELECT") {
+          Swal.fire({
+              icon: "info",
+              title: "Ooops",
+              text: "Check the amount or the currency",
+            })
+      } else if (exchangeCurrency === "EURO") {
+          return exchangeOutput.innerHTML = `€ ${(clpInput / euroValue).toFixed(2)}`;
+      } else if (exchangeCurrency === "DOLLAR") {
+          return exchangeOutput.innerHTML = `$ ${(clpInput / dollarValue).toFixed(2)}`;
+      } else {}
+      }
+    }
 
   calculate.addEventListener("click", (event) => {
     event.preventDefault();
