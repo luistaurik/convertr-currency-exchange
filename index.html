@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/CSS/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Convertr</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <h1>Convertr</h1>
+            <h4>National currency converter</h4>
+        </div>
+    </header>
+    <main>
+        <div class="converter">
+            <h3>Chilean pounds CLP</h3>
+            <div class="inputs">
+                <input class="amount-input" id="amount-input" type="number" placeholder="Enter the amount in CLP" min="0" max="100000000000000">
+                <label for="currency-input">Select currency to convert</label>
+                <select name="currency-input" id="currency-input" class="currency-input">
+                    <option value="EURO">
+                        Euro
+                    </option>
+                    <option value="DOLLAR">
+                        Dollar (USD)
+                    </option>
+                    <option value="SELECT" selected>
+                        Select currency
+                    </option>
+                </select>
+            </div>
+            <div>
+                <button class="calculate" id="calculate">Calculate</button>
+            </div>
+            <div class="results">
+                <p id="result">...</p>
+            </div>
+        </div>
+        <section class="charts">
+            <div>
+                <canvas id="chart" class="chart">
+
+                </canvas>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <ul class="settings">
+            <li><a href="https://mindicador.cl/">Currencies</a></li>
+            <li><a href="https://mindicador.cl/api/">Sources</a></li>
+            <li><a href="https://docs.google.com/document/d/1pVLeppc-T41tovPccsWCaFGpGOGdRCokPik8bsQDP6Q/edit?usp=sharing">Disclaimer</a></li>
+        </ul>
+        <ul class="about">
+            <li><a href="https://acostafue.com">About the author</a></li>
+            <li><a href="https://www.linkedin.com/in/acostafue/">LinkedIn</a></li>
+            <li><a href="https://github.com/luistaurik">Github</a></li>
+        </ul>
+        <div class="ownership">
+            <h6>Taurik's Portfolio 2023 All rights reserved</h6>
+        </div>
+    </footer>
+    <script src="assets/JS/functions.js" defer></script>
+    <script src="assets/JS/charts.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
